@@ -62,12 +62,14 @@ const RegisterPage = () => {
         toast.error(res.message || 'Registration failed');
       }
     } catch (err) {
-      let msg = err.response?.data?.message;
+      let msg = err.response?.data?.message || err.response?.data?.error?.message;
       if (!msg) {
         if (!err.response || err.code === 'ERR_NETWORK' || err.response?.status === 404) {
-          msg = 'Cannot connect to backend server. Please verify your backend is running and VITE_API_URL is configured in Vercel settings.';
+          msg = 'Cannot connect to backend server. Please verify Render backend is online.';
+        } else if (err.response?.status === 401 && err.response?.data?.protection) {
+          msg = 'Vercel Deployment Protection is blocking requests. Please disable Deployment Protection in your Vercel Project Settings.';
         } else {
-          msg = 'Failed to create account.';
+          msg = err.message || 'Failed to create account. Please try again.';
         }
       }
       setError(msg);
