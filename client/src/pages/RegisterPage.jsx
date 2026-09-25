@@ -55,12 +55,8 @@ const RegisterPage = () => {
       setError('');
       const res = await register(formData);
       if (res.success) {
-        toast.success(`Account registered successfully! Welcome, ${res.user.name}.`);
-        if (res.user.role === 'verifier') {
-          navigate('/admin');
-        } else {
-          navigate('/dashboard');
-        }
+        toast.success(`Account registered successfully! Please sign in with your credentials.`);
+        navigate(`/login?registered=true&email=${encodeURIComponent(formData.email)}`);
       } else {
         setError(res.message || 'Registration failed.');
         toast.error(res.message || 'Registration failed');

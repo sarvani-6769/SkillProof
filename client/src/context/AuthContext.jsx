@@ -51,16 +51,11 @@ export const AuthProvider = ({ children }) => {
     return { success: false, message: res.data.message };
   };
 
-  // Register handler
+  // Register handler: registers account without auto-login so user confirms credentials via login
   const register = async (userData) => {
     const res = await api.post('/auth/register', userData);
     if (res.data.success) {
-      const { token: newToken, user: newUser } = res.data;
-      setToken(newToken);
-      setUser(newUser);
-      localStorage.setItem('skillproof_token', newToken);
-      localStorage.setItem('skillproof_user', JSON.stringify(newUser));
-      return { success: true, user: newUser };
+      return { success: true, user: res.data.user, message: res.data.message };
     }
     return { success: false, message: res.data.message };
   };

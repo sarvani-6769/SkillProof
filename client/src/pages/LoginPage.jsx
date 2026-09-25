@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useToast } from '../context/ToastContext';
-import { Shield, Mail, Lock, LogIn, ArrowRight, UserCheck, AlertCircle } from 'lucide-react';
+import { Shield, Mail, Lock, LogIn, ArrowRight, UserCheck, AlertCircle, CheckCircle } from 'lucide-react';
 
 const LoginPage = () => {
   const { login, isAuthenticated, isVerifier } = useAuth();
@@ -16,8 +16,16 @@ const LoginPage = () => {
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
+  const [successMsg, setSuccessMsg] = useState('');
 
   useEffect(() => {
+    if (searchParams.get('registered')) {
+      const emailParam = searchParams.get('email');
+      if (emailParam) {
+        setFormData((prev) => ({ ...prev, email: emailParam }));
+      }
+      setSuccessMsg('Account registered successfully! Please sign in with your credentials to access your dashboard.');
+    }
     if (searchParams.get('session_expired')) {
       toast.warning('Your session has expired. Please sign in again.');
     }
@@ -29,6 +37,7 @@ const LoginPage = () => {
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
     if (error) setError('');
+    if (successMsg) setSuccessMsg('');
   };
 
   const handleSubmit = async (e) => {
@@ -127,6 +136,13 @@ const LoginPage = () => {
 
         {/* Main Login Card */}
         <div className="bg-white rounded-3xl p-6 sm:p-8 border border-slate-200/90 shadow-xl shadow-slate-200/50">
+          {successMsg && (
+            <div className="mb-5 p-3.5 bg-emerald-50 border border-emerald-200 rounded-xl text-xs text-emerald-800 flex items-start gap-2 shadow-xs">
+              <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <span className="font-medium">{successMsg}</span>
+            </div>
+          )}
+
           {error && (
             <div className="mb-5 p-3.5 bg-rose-50 border border-rose-200 rounded-xl text-xs text-rose-700 flex items-start gap-2">
               <AlertCircle className="w-4 h-4 text-rose-500 shrink-0 mt-0.5" />
