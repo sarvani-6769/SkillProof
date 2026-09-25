@@ -4,7 +4,19 @@ import { X, ExternalLink, FileText, Download, ShieldCheck } from 'lucide-react';
 const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks }) => {
   if (!isOpen) return null;
 
-  const backendUrl = import.meta.env.VITE_BACKEND_URL || '';
+  const getBackendUrl = () => {
+    if (import.meta.env.VITE_BACKEND_URL) return import.meta.env.VITE_BACKEND_URL;
+    if (typeof window !== 'undefined') {
+      const hostname = window.location.hostname;
+      const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0';
+      if (!isLocal && !window.location.host.includes('onrender.com')) {
+        return 'https://skillproof-1-auvm.onrender.com';
+      }
+    }
+    return '';
+  };
+
+  const backendUrl = getBackendUrl();
   const resolvedUrl = proofUrl
     ? proofUrl.startsWith('http://') || proofUrl.startsWith('https://') || proofUrl.startsWith('blob:') || proofUrl.startsWith('data:')
       ? proofUrl

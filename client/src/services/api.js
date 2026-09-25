@@ -1,8 +1,24 @@
 import axios from 'axios';
 
+// Dynamically determine API Base URL across Localhost, Vercel, and Render
+export const getBaseURL = () => {
+  if (import.meta.env.VITE_API_URL) {
+    return import.meta.env.VITE_API_URL;
+  }
+  if (typeof window !== 'undefined') {
+    const hostname = window.location.hostname;
+    const isLocal = hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '0.0.0.0';
+    // When running on Vercel or standalone frontend, point directly to live Render backend
+    if (!isLocal && !window.location.host.includes('onrender.com')) {
+      return 'https://skillproof-1-auvm.onrender.com/api';
+    }
+  }
+  return '/api';
+};
+
 // Create centralized Axios instance
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || '/api',
+  baseURL: getBaseURL(),
   headers: {
     'Content-Type': 'application/json',
   },

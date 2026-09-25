@@ -24,26 +24,17 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middlewares
-// Dynamic CORS to support Vercel frontend, localhost, and production domains with credentials
+// Dynamic CORS to support Vercel frontend, preview domains, localhost, and production clients
 app.use(
   cors({
     origin: (origin, callback) => {
-      // Allow requests with no origin (e.g. mobile apps, curl, or server-to-server)
-      if (!origin) return callback(null, true);
-
-      const clientUrl = process.env.CLIENT_URL;
-      if (!clientUrl || clientUrl === '*') {
-        return callback(null, true);
-      }
-
-      const allowedList = clientUrl.split(',').map((url) => url.trim());
-      if (allowedList.includes(origin) || origin.endsWith('.vercel.app') || origin.includes('localhost')) {
-        return callback(null, true);
-      }
-
-      return callback(null, true);
+      // Allow all origins with reflection so credentials: true works seamlessly
+      callback(null, true);
     },
     credentials: true,
+    methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+    exposedHeaders: ['Authorization'],
   })
 );
 app.use(express.json());
