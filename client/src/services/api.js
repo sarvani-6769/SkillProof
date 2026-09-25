@@ -1,0 +1,40 @@
+import axios from 'axios';
+
+// Create centralized Axios instance
+const api = axios.create({
+  baseURL: '/api',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+// Request interceptor to automatically attach JWT token
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('skillproof_token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
+// Response interceptor to handle unauthorized/expired token
+api.interceptors.response.use(
+  (response) => response,
+  (error) => {
+    if (error.response && error.response.status === 401) {
+      // Clear token if expired or invalid
+      const currentPath = window.location.pathname;
+      if (!currentPath.includes('/login') && !currentPath.includes('/register') && !currentPath.startsWith('/profile/')) {
+        localStorage.removeItem('skillproof_token');
+        localStorage.removeItem('skillproof_user');
+        window.location.href = '/login?session_expired=true';
+      }
+    }
+    return Promise.reject(error);
+  }
+);
+
+export default api;
