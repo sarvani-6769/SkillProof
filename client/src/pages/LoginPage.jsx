@@ -54,7 +54,14 @@ const LoginPage = () => {
         toast.error(res.message || 'Login failed');
       }
     } catch (err) {
-      const msg = err.response?.data?.message || 'Invalid email or password.';
+      let msg = err.response?.data?.message;
+      if (!msg) {
+        if (!err.response || err.code === 'ERR_NETWORK' || err.response?.status === 404) {
+          msg = 'Cannot connect to backend server. Please verify your backend is running and VITE_API_URL is configured in Vercel settings.';
+        } else {
+          msg = 'Invalid email or password.';
+        }
+      }
       setError(msg);
       toast.error(msg);
     } finally {

@@ -1,7 +1,9 @@
 import express from 'express';
+import mongoose from 'mongoose';
 import cors from 'cors';
 import morgan from 'morgan';
 import path from 'path';
+import fs from 'fs';
 import { fileURLToPath } from 'url';
 
 import authRoutes from './routes/authRoutes.js';
@@ -22,9 +24,25 @@ const __dirname = path.dirname(__filename);
 const app = express();
 
 // Middlewares
+// Dynamic CORS to support Vercel frontend, localhost, and production domains with credentials
 app.use(
   cors({
-    origin: process.env.CLIENT_URL || '*',
+    origin: (origin, callback) => {
+      // Allow requests with no origin (e.g. mobile apps, curl, or server-to-server)
+      if (!origin) return callback(null, true);
+
+      const clientUrl = process.env.CLIENT_URL;
+      if (!clientUrl || clientUrl === '*') {
+        return callback(null, true);
+      }
+
+      const allowedList = clientUrl.split(',').map((url) => url.trim());
+      if (allowedList.includes(origin) || origin.endsWith('.vercel.app') || origin.includes('localhost')) {
+        return callback(null, true);
+      }
+
+      return callback(null, true);
+    },
     credentials: true,
   })
 );
@@ -40,9 +58,13 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
+  const isDbConnected = mongoose.connection.readyState === 1;
   res.status(200).json({
-    status: 'OK',
-    message: 'SkillProof API is operating normally.',
+    status: isDbConnected ? 'OK' : 'DEGRADED',
+    database: isDbConnected ? 'connected' : 'connecting_or_auth_failed',
+    message: isDbConnected
+      ? 'SkillProof API is operating normally.'
+      : 'SkillProof API is running, but database authentication is pending or failed.',
     timestamp: new Date().toISOString(),
   });
 });
@@ -60,19 +82,23 @@ app.use('/api/search', searchRoutes);
 
 // In production or when client/dist exists, serve client static files & SPA fallback
 const clientDistPath = path.join(__dirname, '../client/dist');
-app.use(express.static(clientDistPath));
+if (fs.existsSync(clientDistPath)) {
+  app.use(express.static(clientDistPath));
+}
 
-app.get('*', (req, res, next) => {
-  // Pass API and Uploads requests down to 404 handler
+// Safe SPA wildcard fallback compatible with Express 5 (no path-to-regexp wildcard parsing)
+app.use((req, res, next) => {
+  if (req.method !== 'GET') {
+    return next();
+  }
   if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
     return next();
   }
   const indexPath = path.join(clientDistPath, 'index.html');
-  res.sendFile(indexPath, (err) => {
-    if (err) {
-      next();
-    }
-  });
+  if (fs.existsSync(indexPath)) {
+    return res.sendFile(indexPath);
+  }
+  next();
 });
 
 // Error Handling Middlewares

@@ -1,36 +1,56 @@
 import mongoose from 'mongoose';
 
-const connectDB = async () => {
+let isConnecting = false;
+
+const attemptConnection = async () => {
+  if (isConnecting || mongoose.connection.readyState === 1) return;
+  isConnecting = true;
+
   const primaryUri = process.env.MONGODB_URI;
   const fallbackUri = 'mongodb://127.0.0.1:27017/skillproof';
 
   try {
-    const conn = await mongoose.connect(primaryUri);
-    console.log(`[MongoDB] Connected successfully: ${conn.connection.host}`);
+    if (primaryUri) {
+      const conn = await mongoose.connect(primaryUri);
+      console.log(`[MongoDB] Connected successfully to Atlas: ${conn.connection.host}`);
+      isConnecting = false;
+      return;
+    }
   } catch (error) {
-    console.error(`\n⚠️  [MongoDB Connection Warning]: Failed to connect to ${primaryUri}`);
-    console.error(`   Reason: ${error.message}`);
-
+    console.error(`\n============================================================`);
+    console.error(`🚨 [MongoDB Atlas Connection Issue]`);
+    console.error(`Reason: ${error.message}`);
     if (error.message.includes('authentication failed')) {
-      console.warn(`   👉 Atlas Tip: Please verify in MongoDB Atlas > "Database Access" that:`);
-      console.warn(`      1. User exists: ${process.env.MONGODB_USERNAME || 'sarvanisathuluri799_db_user'}`);
-      console.warn(`      2. Password matches: "Edit Password" in Atlas and re-enter it.`);
-      console.warn(`      3. User has "Read and write to any database" privileges.`);
+      console.error(`\n👉 HOW TO FIX MONGODB ATLAS AUTHENTICATION:`);
+      console.error(`   1. Go to https://cloud.mongodb.com -> "Database Access"`);
+      console.error(`   2. Find user: ${process.env.MONGODB_USERNAME || 'sarvanisathuluri799_db_user'}`);
+      console.error(`   3. Click "Edit" -> "Edit Password" -> Set/Confirm password`);
+      console.error(`   4. Go to "Network Access" -> Ensure "0.0.0.0/0" (Allow All) is Active`);
     }
-
-    if (primaryUri !== fallbackUri) {
-      console.log(`   🔄 Attempting fallback to local MongoDB instance (${fallbackUri})...`);
-      try {
-        const localConn = await mongoose.connect(fallbackUri);
-        console.log(`[MongoDB] Connected to local fallback: ${localConn.connection.host}`);
-      } catch (localErr) {
-        console.error(`[MongoDB Fatal]: Both primary and fallback connections failed: ${localErr.message}`);
-        process.exit(1);
-      }
-    } else {
-      process.exit(1);
-    }
+    console.error(`============================================================\n`);
   }
+
+  // Attempt local fallback
+  try {
+    const localConn = await mongoose.connect(fallbackUri);
+    console.log(`[MongoDB] Connected to local fallback instance: ${localConn.connection.host}`);
+    isConnecting = false;
+    return;
+  } catch (localErr) {
+    console.warn(`[MongoDB Notice]: Local fallback unavailable (${localErr.message}).`);
+  }
+
+  isConnecting = false;
+
+  // In cloud deployment (Render/Railway), schedule auto-retry every 20 seconds instead of hard crashing
+  if (process.env.NODE_ENV === 'production') {
+    console.log(`[MongoDB] Retrying database connection in 20 seconds...`);
+    setTimeout(attemptConnection, 20000);
+  }
+};
+
+const connectDB = async () => {
+  await attemptConnection();
 };
 
 export default connectDB;

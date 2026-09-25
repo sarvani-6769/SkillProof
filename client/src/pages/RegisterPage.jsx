@@ -66,7 +66,14 @@ const RegisterPage = () => {
         toast.error(res.message || 'Registration failed');
       }
     } catch (err) {
-      const msg = err.response?.data?.message || 'Failed to create account.';
+      let msg = err.response?.data?.message;
+      if (!msg) {
+        if (!err.response || err.code === 'ERR_NETWORK' || err.response?.status === 404) {
+          msg = 'Cannot connect to backend server. Please verify your backend is running and VITE_API_URL is configured in Vercel settings.';
+        } else {
+          msg = 'Failed to create account.';
+        }
+      }
       setError(msg);
       toast.error(msg);
     } finally {
