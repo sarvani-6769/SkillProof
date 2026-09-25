@@ -58,6 +58,23 @@ app.use('/api/achievements', achievementRoutes);
 app.use('/api/verification', verificationRoutes);
 app.use('/api/search', searchRoutes);
 
+// In production or when client/dist exists, serve client static files & SPA fallback
+const clientDistPath = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDistPath));
+
+app.get('*', (req, res, next) => {
+  // Pass API and Uploads requests down to 404 handler
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+    return next();
+  }
+  const indexPath = path.join(clientDistPath, 'index.html');
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      next();
+    }
+  });
+});
+
 // Error Handling Middlewares
 app.use(notFound);
 app.use(errorHandler);

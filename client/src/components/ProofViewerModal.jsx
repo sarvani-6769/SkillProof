@@ -4,8 +4,15 @@ import { X, ExternalLink, FileText, Download, ShieldCheck } from 'lucide-react';
 const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks }) => {
   if (!isOpen) return null;
 
-  const isPdf = proofUrl?.toLowerCase().endsWith('.pdf');
-  const isImage = proofUrl?.match(/\.(jpeg|jpg|gif|png|svg|webp)$/i);
+  const backendUrl = import.meta.env.VITE_BACKEND_URL || '';
+  const resolvedUrl = proofUrl
+    ? proofUrl.startsWith('http://') || proofUrl.startsWith('https://') || proofUrl.startsWith('blob:') || proofUrl.startsWith('data:')
+      ? proofUrl
+      : `${backendUrl}${proofUrl.startsWith('/') ? '' : '/'}${proofUrl}`
+    : '';
+
+  const isPdf = resolvedUrl?.toLowerCase().endsWith('.pdf');
+  const isImage = resolvedUrl?.match(/\.(jpeg|jpg|gif|png|svg|webp)$/i);
 
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
@@ -35,18 +42,18 @@ const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks 
 
         {/* Modal Content */}
         <div className="p-6 max-h-[75vh] overflow-y-auto flex flex-col items-center justify-center bg-slate-100/60 min-h-[300px]">
-          {proofUrl ? (
+          {resolvedUrl ? (
             isImage ? (
               <div className="w-full flex flex-col items-center">
                 <img
-                  src={proofUrl}
+                  src={resolvedUrl}
                   alt={title || 'Proof Document'}
                   className="max-h-[60vh] max-w-full rounded-lg shadow-md border border-slate-200 object-contain bg-white"
                 />
               </div>
             ) : isPdf ? (
               <iframe
-                src={proofUrl}
+                src={resolvedUrl}
                 title="Proof PDF"
                 className="w-full h-[60vh] rounded-lg border border-slate-200 bg-white"
               />
@@ -54,9 +61,9 @@ const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks 
               <div className="text-center py-10">
                 <FileText className="w-16 h-16 text-indigo-400 mx-auto mb-3" />
                 <p className="text-slate-700 font-medium mb-1">Document attached</p>
-                <p className="text-xs text-slate-500 mb-4">{proofUrl}</p>
+                <p className="text-xs text-slate-500 mb-4">{resolvedUrl}</p>
                 <a
-                  href={proofUrl}
+                  href={resolvedUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition"
@@ -87,9 +94,9 @@ const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks 
         <div className="px-6 py-3.5 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
           <div className="text-xs text-slate-500">SkillProof Integrity Engine</div>
           <div className="flex items-center gap-2">
-            {proofUrl && (
+            {resolvedUrl && (
               <a
-                href={proofUrl}
+                href={resolvedUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-medium text-slate-700 bg-white border border-slate-200 rounded-lg hover:bg-slate-50 transition shadow-sm"

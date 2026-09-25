@@ -297,6 +297,43 @@ node test_suite.js
 
 ---
 
+## 🚀 Production Deployment Guide
+
+SkillProof is fully pre-configured for deployment either as a unified single-port service or as split frontend and backend services.
+
+### Option A: Unified Full-Stack Deployment (Render, Railway, Heroku, AWS)
+The Express backend in `server/app.js` is configured to serve the React frontend static build from `client/dist` and handle single-page application routing automatically.
+
+1. **Build Command**: `npm run build` (builds the optimized client static bundle)
+2. **Start Command**: `npm start` (starts the Express server in production mode)
+3. **Environment Variables**:
+   - `NODE_ENV=production`
+   - `PORT=5000` (or platform default)
+   - `MONGODB_URI=mongodb+srv://<user>:<password>@cluster0.pmx8nzk.mongodb.net/skillproof?retryWrites=true&w=majority`
+   - `JWT_SECRET=your_jwt_production_secret`
+
+### Option B: Split Services Deployment (Vercel / Netlify + Render / Railway)
+
+#### Frontend (Vercel / Netlify):
+- **Root Directory**: `client`
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist`
+- **Environment Variables**:
+  - `VITE_API_URL`: Your deployed backend API URL (e.g., `https://skillproof-api.onrender.com/api`)
+  - `VITE_BACKEND_URL`: Your deployed backend host (e.g., `https://skillproof-api.onrender.com`)
+- **SPA Routing**: `client/vercel.json` is already included to automatically route all paths to `index.html`.
+
+#### Backend (Render / Railway / Fly.io):
+- **Root Directory**: `server`
+- **Build Command**: `npm install`
+- **Start Command**: `npm start`
+- **Environment Variables**:
+  - `MONGODB_URI`: Atlas connection string
+  - `JWT_SECRET`: Production secret key
+  - `CLIENT_URL`: URL of your deployed frontend (e.g., `https://skillproof.vercel.app`)
+
+---
+
 ## 🔮 Future Enhancements
 
 - **Blockchain Credential Anchoring**: Mint Soulbound NFTs (SBTs) on Polygon / Ethereum for decentralized verification.
