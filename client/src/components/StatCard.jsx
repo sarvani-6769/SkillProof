@@ -5,16 +5,16 @@ const StatCard = ({
   value,
   subtext,
   icon: Icon,
-  color = 'indigo', // indigo, emerald, amber, blue, purple, rose
+  color = 'rose', // rose, emerald, amber, purple
   trend,
   className = '',
   onClick,
 }) => {
   const colorStyles = {
-    indigo: {
-      bg: 'bg-indigo-50/70 text-indigo-600',
-      border: 'hover:border-indigo-300',
-      glow: 'hover:shadow-indigo-500/10',
+    rose: {
+      bg: 'bg-rose-50/70 text-rose-600',
+      border: 'hover:border-rose-300',
+      glow: 'hover:shadow-rose-500/10',
     },
     emerald: {
       bg: 'bg-emerald-50/70 text-emerald-600',
@@ -26,24 +26,14 @@ const StatCard = ({
       border: 'hover:border-amber-300',
       glow: 'hover:shadow-amber-500/10',
     },
-    blue: {
-      bg: 'bg-sky-50/70 text-sky-600',
-      border: 'hover:border-sky-300',
-      glow: 'hover:shadow-sky-500/10',
-    },
     purple: {
       bg: 'bg-purple-50/70 text-purple-600',
       border: 'hover:border-purple-300',
       glow: 'hover:shadow-purple-500/10',
     },
-    rose: {
-      bg: 'bg-rose-50/70 text-rose-600',
-      border: 'hover:border-rose-300',
-      glow: 'hover:shadow-rose-500/10',
-    },
   };
 
-  const style = colorStyles[color] || colorStyles.indigo;
+  const style = colorStyles[color] || colorStyles.rose;
 
   return (
     <div

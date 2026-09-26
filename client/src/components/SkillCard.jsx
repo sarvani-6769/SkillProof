@@ -28,9 +28,9 @@ const SkillCard = ({
   const getCategoryColor = (cat) => {
     switch (cat) {
       case 'Programming':
-        return 'bg-blue-50 text-blue-700 border-blue-200';
+        return 'bg-rose-50 text-rose-700 border-rose-200';
       case 'Web Development':
-        return 'bg-indigo-50 text-indigo-700 border-indigo-200';
+        return 'bg-rose-50 text-rose-700 border-rose-200';
       case 'Database':
         return 'bg-emerald-50 text-emerald-700 border-emerald-200';
       case 'Data Science':
@@ -38,7 +38,7 @@ const SkillCard = ({
       case 'AI/ML':
         return 'bg-violet-50 text-violet-700 border-violet-200';
       case 'Cloud':
-        return 'bg-sky-50 text-sky-700 border-sky-200';
+        return 'bg-amber-50 text-amber-700 border-amber-200';
       case 'Tools':
         return 'bg-amber-50 text-amber-700 border-amber-200';
       default:
@@ -76,9 +76,9 @@ const SkillCard = ({
                 percent === 100
                   ? 'bg-gradient-to-r from-emerald-500 to-teal-500'
                   : percent >= 75
-                  ? 'bg-gradient-to-r from-indigo-500 to-blue-500'
+                  ? 'bg-gradient-to-r from-rose-500 to-rose-500'
                   : percent >= 50
-                  ? 'bg-gradient-to-r from-blue-400 to-sky-400'
+                  ? 'bg-gradient-to-r from-rose-400 to-amber-400'
                   : 'bg-gradient-to-r from-amber-400 to-orange-400'
               }`}
               style={{ width: `${percent}%` }}
@@ -103,7 +103,7 @@ const SkillCard = ({
               <button
                 type="button"
                 onClick={() => onViewProof(skill.proof, skill.name, 'Skill')}
-                className="p-1.5 text-xs text-indigo-600 hover:bg-indigo-50 rounded-lg font-medium transition"
+                className="p-1.5 text-xs text-rose-600 hover:bg-rose-50 rounded-lg font-medium transition"
                 title="View Uploaded Proof"
               >
                 <FileCheck className="w-4 h-4" />
@@ -114,7 +114,7 @@ const SkillCard = ({
               <button
                 type="button"
                 onClick={() => onSubmitVerification(skill)}
-                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition"
+                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg transition"
               >
                 <Send className="w-3 h-3" /> Submit Verification
               </button>

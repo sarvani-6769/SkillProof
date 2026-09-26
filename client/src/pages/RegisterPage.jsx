@@ -85,7 +85,7 @@ const RegisterPage = () => {
         {/* Header */}
         <div className="text-center mb-8">
           <Link to="/" className="inline-flex items-center gap-2 mb-4">
-            <div className="w-10 h-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center shadow-md shadow-indigo-500/20">
+            <div className="w-10 h-10 rounded-xl bg-rose-600 text-white flex items-center justify-center shadow-md shadow-rose-500/20">
               <Shield className="w-5 h-5" />
             </div>
             <span className="font-extrabold text-2xl text-slate-900">SkillProof</span>
@@ -119,7 +119,7 @@ const RegisterPage = () => {
                   onClick={() => setFormData((prev) => ({ ...prev, role: 'student' }))}
                   className={`p-3 rounded-2xl border text-left transition flex flex-col justify-between ${
                     formData.role === 'student'
-                      ? 'border-indigo-600 bg-indigo-50/70 text-indigo-950 ring-2 ring-indigo-600/20'
+                      ? 'border-rose-600 bg-rose-50/70 text-rose-950 ring-2 ring-rose-600/20'
                       : 'border-slate-200 hover:border-slate-300 text-slate-600'
                   }`}
                 >
@@ -134,7 +134,7 @@ const RegisterPage = () => {
                   onClick={() => setFormData((prev) => ({ ...prev, role: 'verifier' }))}
                   className={`p-3 rounded-2xl border text-left transition flex flex-col justify-between ${
                     formData.role === 'verifier'
-                      ? 'border-indigo-600 bg-indigo-50/70 text-indigo-950 ring-2 ring-indigo-600/20'
+                      ? 'border-rose-600 bg-rose-50/70 text-rose-950 ring-2 ring-rose-600/20'
                       : 'border-slate-200 hover:border-slate-300 text-slate-600'
                   }`}
                 >
@@ -160,7 +160,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="e.g. Maya Chen"
                   required
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 transition"
                 />
               </div>
             </div>
@@ -179,7 +179,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="name@university.edu"
                   required
-                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 transition"
                 />
               </div>
             </div>
@@ -199,7 +199,7 @@ const RegisterPage = () => {
                   value={formData.username}
                   onChange={handleChange}
                   placeholder="mayachen"
-                  className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                  className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 transition"
                 />
               </div>
               <p className="text-[11px] text-slate-400 mt-1">
@@ -222,7 +222,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                     placeholder="Min. 6 chars"
                     required
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 transition"
                   />
                 </div>
               </div>
@@ -240,7 +240,7 @@ const RegisterPage = () => {
                     onChange={handleChange}
                     placeholder="Confirm"
                     required
-                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 transition"
+                    className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm text-slate-900 focus:outline-none focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 transition"
                   />
                 </div>
               </div>
@@ -249,7 +249,7 @@ const RegisterPage = () => {
             <button
               type="submit"
               disabled={loading}
-              className="w-full mt-3 py-3 px-4 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-500/20 hover:shadow-indigo-500/30 transition-all flex items-center justify-center gap-2"
+              className="w-full mt-3 py-3 px-4 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm shadow-md shadow-rose-500/20 hover:shadow-rose-500/30 transition-all flex items-center justify-center gap-2"
             >
               {loading ? (
                 <span>Creating Account...</span>
@@ -264,7 +264,7 @@ const RegisterPage = () => {
 
           <div className="mt-6 pt-6 border-t border-slate-100 text-center text-xs text-slate-500">
             Already have an account?{' '}
-            <Link to="/login" className="font-semibold text-indigo-600 hover:underline">
+            <Link to="/login" className="font-semibold text-rose-600 hover:underline">
               Sign in
             </Link>
           </div>

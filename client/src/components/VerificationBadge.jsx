@@ -39,8 +39,8 @@ const VerificationBadge = ({ status, size = 'md', showIcon = true, className = '
       break;
     case 'Under Review':
       config = {
-        bg: 'bg-indigo-50 text-indigo-700 border-indigo-200',
-        icon: <Clock className={`${iconSizes[size]} text-indigo-600`} />,
+        bg: 'bg-rose-50 text-rose-700 border-rose-200',
+        icon: <Clock className={`${iconSizes[size]} text-rose-600`} />,
         label: 'Under Review',
       };
       break;

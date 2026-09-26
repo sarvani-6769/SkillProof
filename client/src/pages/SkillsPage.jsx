@@ -206,7 +206,7 @@ const SkillsPage = () => {
         <button
           type="button"
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-xs shadow-md shadow-rose-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Skill</span>
@@ -221,7 +221,7 @@ const SkillsPage = () => {
             onClick={() => setActiveCategory(cat)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
               activeCategory === cat
-                ? 'bg-indigo-600 text-white shadow-xs'
+                ? 'bg-rose-600 text-white shadow-xs'
                 : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'
             }`}
           >
@@ -276,7 +276,7 @@ const SkillsPage = () => {
               onChange={(e) => setFormData((prev) => ({ ...prev, name: e.target.value }))}
               placeholder="e.g. React.js, Python, PostgreSQL, AWS"
               required
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
             />
           </div>
 
@@ -286,7 +286,7 @@ const SkillsPage = () => {
               <select
                 value={formData.category}
                 onChange={(e) => setFormData((prev) => ({ ...prev, category: e.target.value }))}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none bg-white"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none bg-white"
               >
                 {CATEGORIES.filter((c) => c !== 'All').map((c) => (
                   <option key={c} value={c}>
@@ -303,7 +303,7 @@ const SkillsPage = () => {
               <select
                 value={formData.proficiency}
                 onChange={(e) => setFormData((prev) => ({ ...prev, proficiency: e.target.value }))}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none bg-white"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none bg-white"
               >
                 {PROFICIENCIES.map((p) => (
                   <option key={p} value={p}>
@@ -322,7 +322,7 @@ const SkillsPage = () => {
               type="file"
               accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
               onChange={(e) => setProofFile(e.target.files[0])}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
             />
           </div>
 
@@ -337,7 +337,7 @@ const SkillsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Saving...' : editingSkill ? 'Save Changes' : 'Add Skill'}
             </button>
@@ -366,7 +366,7 @@ const SkillsPage = () => {
               type="file"
               accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
               onChange={(e) => setVerificationProofFile(e.target.files[0])}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
             />
           </div>
 
@@ -381,7 +381,7 @@ const SkillsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Submitting...' : 'Submit to Verifier'}
             </button>

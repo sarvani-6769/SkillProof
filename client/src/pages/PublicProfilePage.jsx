@@ -91,7 +91,7 @@ const PublicProfilePage = () => {
         <p className="text-xs text-slate-500 mb-6">{error || 'No verified profile matches this username.'}</p>
         <Link
           to="/search"
-          className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition shadow-xs"
+          className="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition shadow-xs"
         >
           Explore All Student Profiles
         </Link>
@@ -120,7 +120,7 @@ const PublicProfilePage = () => {
       {/* Verification Shield Hero Banner */}
       <div className="bg-white rounded-3xl p-6 sm:p-10 border border-slate-200/90 shadow-xl shadow-slate-200/40 relative overflow-hidden">
         {/* Accent Banner background */}
-        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-r from-indigo-700 via-indigo-600 to-sky-600 -z-0"></div>
+        <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-r from-rose-700 via-rose-600 to-amber-600 -z-0"></div>
 
         <div className="relative z-10 pt-10 flex flex-col md:flex-row md:items-end justify-between gap-6">
           {/* Avatar & Core Bio */}
@@ -133,7 +133,7 @@ const PublicProfilePage = () => {
                   className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl object-cover ring-4 ring-white shadow-xl bg-white"
                 />
               ) : (
-                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-indigo-600 text-white flex items-center justify-center font-black text-4xl ring-4 ring-white shadow-xl">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-3xl bg-rose-600 text-white flex items-center justify-center font-black text-4xl ring-4 ring-white shadow-xl">
                   {user.name.charAt(0)}
                 </div>
               )}
@@ -156,7 +156,7 @@ const PublicProfilePage = () => {
                 </span>
               </div>
 
-              <p className="text-xs font-mono text-indigo-600 font-semibold mb-2">
+              <p className="text-xs font-mono text-rose-600 font-semibold mb-2">
                 @{user.username}
               </p>
 
@@ -202,7 +202,7 @@ const PublicProfilePage = () => {
                   href={user.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-indigo-600 transition"
+                  className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-rose-600 transition"
                   title="LinkedIn Profile"
                 >
                   <LinkedinIcon className="w-4 h-4" />
@@ -213,7 +213,7 @@ const PublicProfilePage = () => {
                   href={user.portfolio}
                   target="_blank"
                   rel="noreferrer"
-                  className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-sky-600 transition"
+                  className="p-2.5 rounded-xl bg-slate-100 hover:bg-slate-200 text-amber-600 transition"
                   title="Portfolio Website"
                 >
                   <Globe className="w-4 h-4" />
@@ -225,7 +225,7 @@ const PublicProfilePage = () => {
               <button
                 type="button"
                 onClick={handleCopyLink}
-                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 rounded-xl text-xs font-bold transition border border-indigo-200/60"
+                className="inline-flex items-center gap-1.5 px-3.5 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 rounded-xl text-xs font-bold transition border border-rose-200/60"
               >
                 <Share2 className="w-3.5 h-3.5" />
                 <span>Share</span>
@@ -252,7 +252,7 @@ const PublicProfilePage = () => {
         )}
 
         {/* Authenticated Verification Tally Bar */}
-        <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-50/70 via-indigo-50/50 to-slate-50 border border-emerald-100 flex flex-wrap items-center justify-between gap-4">
+        <div className="mt-6 p-4 rounded-2xl bg-gradient-to-r from-emerald-50/70 via-rose-50/50 to-slate-50 border border-emerald-100 flex flex-wrap items-center justify-between gap-4">
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center font-bold">
               <CheckCircle2 className="w-5 h-5" />
@@ -300,7 +300,7 @@ const PublicProfilePage = () => {
       <section className="space-y-4">
         <div className="flex items-center justify-between border-b border-slate-200 pb-2">
           <div className="flex items-center gap-2">
-            <Code2 className="w-5 h-5 text-indigo-600" />
+            <Code2 className="w-5 h-5 text-rose-600" />
             <h2 className="text-lg font-bold text-slate-900">
               Technical & Core Skills ({displayedSkills.length})
             </h2>
@@ -321,7 +321,7 @@ const PublicProfilePage = () => {
                   <VerificationBadge status={skill.verificationStatus} size="sm" />
                 </div>
                 <h4 className="font-bold text-sm text-slate-900">{skill.name}</h4>
-                <p className="text-xs text-indigo-600 font-semibold mt-1">{skill.proficiency}</p>
+                <p className="text-xs text-rose-600 font-semibold mt-1">{skill.proficiency}</p>
               </div>
             ))}
           </div>
@@ -382,7 +382,7 @@ const PublicProfilePage = () => {
                       href={cert.credentialUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:underline"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-rose-600 hover:underline"
                     >
                       <ExternalLink className="w-3.5 h-3.5" /> Issuer Registry
                     </a>
@@ -402,7 +402,7 @@ const PublicProfilePage = () => {
                           remarks: cert.verificationRemarks,
                         })
                       }
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-slate-700 hover:text-indigo-600"
+                      className="inline-flex items-center gap-1 text-xs font-semibold text-slate-700 hover:text-rose-600"
                     >
                       <FileText className="w-3.5 h-3.5" /> View Proof
                     </button>
@@ -420,7 +420,7 @@ const PublicProfilePage = () => {
       <section className="space-y-4">
         <div className="flex items-center justify-between border-b border-slate-200 pb-2">
           <div className="flex items-center gap-2">
-            <Layers className="w-5 h-5 text-indigo-600" />
+            <Layers className="w-5 h-5 text-rose-600" />
             <h2 className="text-lg font-bold text-slate-900">
               Projects & Implementations ({displayedProjects.length})
             </h2>
@@ -472,7 +472,7 @@ const PublicProfilePage = () => {
                       href={p.liveUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 font-semibold text-indigo-600 hover:underline"
+                      className="inline-flex items-center gap-1 font-semibold text-rose-600 hover:underline"
                     >
                       <ExternalLink className="w-3.5 h-3.5" /> Demo
                     </a>
@@ -491,7 +491,7 @@ const PublicProfilePage = () => {
         {/* Internships */}
         <section className="space-y-4">
           <div className="flex items-center gap-2 border-b border-slate-200 pb-2">
-            <Briefcase className="w-5 h-5 text-sky-600" />
+            <Briefcase className="w-5 h-5 text-amber-600" />
             <h2 className="text-lg font-bold text-slate-900">
               Work & Internships ({displayedInternships.length})
             </h2>
@@ -546,7 +546,7 @@ const PublicProfilePage = () => {
                 >
                   <div className="flex items-start justify-between gap-2 mb-1">
                     <div>
-                      <span className="text-[10px] font-bold uppercase tracking-wider text-indigo-600">
+                      <span className="text-[10px] font-bold uppercase tracking-wider text-rose-600">
                         {ach.category}
                       </span>
                       <h4 className="text-sm font-bold text-slate-900">{ach.title}</h4>

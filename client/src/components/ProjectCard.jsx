@@ -15,11 +15,11 @@ const ProjectCard = ({
       <div>
         <div className="flex items-start justify-between gap-3 mb-2">
           <div className="flex items-center gap-2.5">
-            <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/60 text-indigo-600 flex items-center justify-center shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-rose-50 border border-rose-200/60 text-rose-600 flex items-center justify-center shrink-0">
               <Code2 className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition leading-snug">
+              <h4 className="text-base font-bold text-slate-900 group-hover:text-rose-600 transition leading-snug">
                 {project.title}
               </h4>
               {(project.projectRole || project.projectDuration) && (
@@ -76,7 +76,7 @@ const ProjectCard = ({
               href={project.liveUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600 hover:text-rose-800 transition"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               Live Demo
@@ -122,7 +122,7 @@ const ProjectCard = ({
               <button
                 type="button"
                 onClick={() => onSubmitVerification(project)}
-                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition"
+                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg transition"
               >
                 <Send className="w-3 h-3" /> Submit Verification
               </button>

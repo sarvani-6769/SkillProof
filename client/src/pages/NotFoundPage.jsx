@@ -5,7 +5,7 @@ import { ShieldAlert, ArrowLeft } from 'lucide-react';
 const NotFoundPage = () => {
   return (
     <div className="min-h-[70vh] flex flex-col items-center justify-center p-6 text-center">
-      <div className="w-16 h-16 rounded-3xl bg-indigo-50 text-indigo-600 flex items-center justify-center mb-6 shadow-sm">
+      <div className="w-16 h-16 rounded-3xl bg-rose-50 text-rose-600 flex items-center justify-center mb-6 shadow-sm">
         <ShieldAlert className="w-8 h-8" />
       </div>
       <h1 className="text-4xl font-extrabold text-slate-900 tracking-tight mb-2">404</h1>
@@ -15,7 +15,7 @@ const NotFoundPage = () => {
       </p>
       <Link
         to="/"
-        className="inline-flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl text-xs font-bold transition shadow-xs"
+        className="inline-flex items-center gap-2 px-5 py-2.5 bg-rose-600 hover:bg-rose-700 text-white rounded-xl text-xs font-bold transition shadow-xs"
       >
         <ArrowLeft className="w-4 h-4" />
         <span>Return to Home</span>

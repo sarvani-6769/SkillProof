@@ -28,7 +28,7 @@ const CertificateCard = ({
               <span className="text-xs font-semibold text-slate-500 block uppercase tracking-wider">
                 {certificate.organization}
               </span>
-              <h4 className="text-base font-bold text-slate-900 leading-snug group-hover:text-indigo-600 transition">
+              <h4 className="text-base font-bold text-slate-900 leading-snug group-hover:text-rose-600 transition">
                 {certificate.title}
               </h4>
             </div>
@@ -66,7 +66,7 @@ const CertificateCard = ({
               href={certificate.credentialUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-1.5 text-xs font-semibold text-indigo-600 hover:text-indigo-800 transition"
+              className="inline-flex items-center gap-1.5 text-xs font-semibold text-rose-600 hover:text-rose-800 transition"
             >
               <ExternalLink className="w-3.5 h-3.5" />
               Verify on Issuer Portal
@@ -112,7 +112,7 @@ const CertificateCard = ({
               <button
                 type="button"
                 onClick={() => onSubmitVerification(certificate)}
-                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 rounded-lg transition"
+                className="inline-flex items-center gap-1 px-2.5 py-1 text-xs font-semibold text-rose-700 bg-rose-50 hover:bg-rose-100 rounded-lg transition"
               >
                 <Send className="w-3 h-3" /> Submit Verification
               </button>

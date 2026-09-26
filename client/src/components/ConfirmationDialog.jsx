@@ -47,7 +47,7 @@ const ConfirmationDialog = ({
       case 'success':
         return 'bg-emerald-600 hover:bg-emerald-700 text-white';
       default:
-        return 'bg-indigo-600 hover:bg-indigo-700 text-white';
+        return 'bg-rose-600 hover:bg-rose-700 text-white';
     }
   };
 

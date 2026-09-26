@@ -126,7 +126,7 @@ const AdminVerificationRequestsPage = () => {
               onClick={() => setStatusFilter(status)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition ${
                 statusFilter === status
-                  ? 'bg-indigo-600 text-white shadow-xs'
+                  ? 'bg-rose-600 text-white shadow-xs'
                   : 'text-slate-600 hover:bg-slate-100'
               }`}
             >
@@ -142,7 +142,7 @@ const AdminVerificationRequestsPage = () => {
           <select
             value={typeFilter}
             onChange={(e) => setTypeFilter(e.target.value)}
-            className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-medium focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none bg-white text-slate-700"
+            className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-medium focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none bg-white text-slate-700"
           >
             {ITEM_TYPES.map((type) => (
               <option key={type} value={type}>
@@ -169,17 +169,17 @@ const AdminVerificationRequestsPage = () => {
                   <img
                     src={req.userId.profilePhoto}
                     alt=""
-                    className="w-12 h-12 rounded-2xl object-cover ring-2 ring-indigo-500/10 shadow-xs"
+                    className="w-12 h-12 rounded-2xl object-cover ring-2 ring-rose-500/10 shadow-xs"
                   />
                 ) : (
-                  <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-base border border-indigo-100 shrink-0">
+                  <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-700 flex items-center justify-center font-bold text-base border border-rose-100 shrink-0">
                     {req.userId?.name?.charAt(0) || 'S'}
                   </div>
                 )}
 
                 <div>
                   <div className="flex flex-wrap items-center gap-2 mb-1">
-                    <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-indigo-50 text-indigo-700 border border-indigo-200/60">
+                    <span className="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-rose-50 text-rose-700 border border-rose-200/60">
                       {req.itemType}
                     </span>
                     <VerificationBadge status={req.status} size="sm" />
@@ -295,7 +295,7 @@ const AdminVerificationRequestsPage = () => {
                   href={selectedReq.proof}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-indigo-600 underline font-medium"
+                  className="text-rose-600 underline font-medium"
                 >
                   Inspect Uploaded Document
                 </a>
@@ -317,7 +317,7 @@ const AdminVerificationRequestsPage = () => {
                   : 'Please explain the rejection reason so the student can rectify it...'
               }
               required={actionType === 'reject'}
-              className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+              className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
             ></textarea>
           </div>
 

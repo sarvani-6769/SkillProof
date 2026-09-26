@@ -89,8 +89,8 @@ const SearchProfilesPage = () => {
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
       {/* Search Header */}
       <div className="text-center max-w-2xl mx-auto space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 text-indigo-700 text-xs font-semibold border border-indigo-200/80">
-          <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-50 text-rose-700 text-xs font-semibold border border-rose-200/80">
+          <Sparkles className="w-3.5 h-3.5 text-rose-600" />
           <span>Talent Discovery & Verification Directory</span>
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
@@ -111,12 +111,12 @@ const SearchProfilesPage = () => {
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               placeholder="Search by student name, college, degree, or skill..."
-              className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none shadow-xs"
+              className="w-full pl-12 pr-4 py-3.5 rounded-2xl border border-slate-200 bg-white text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none shadow-xs"
             />
           </div>
           <button
             type="submit"
-            className="px-6 py-3.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-2xl text-xs font-bold transition shadow-md shadow-indigo-500/20"
+            className="px-6 py-3.5 bg-rose-600 hover:bg-rose-700 text-white rounded-2xl text-xs font-bold transition shadow-md shadow-rose-500/20"
           >
             Search
           </button>
@@ -139,8 +139,8 @@ const SearchProfilesPage = () => {
                 onClick={() => handleChipClick(chip)}
                 className={`px-3 py-1 rounded-xl text-xs font-semibold transition ${
                   isSelected
-                    ? 'bg-indigo-600 text-white shadow-xs'
-                    : 'bg-white text-slate-600 border border-slate-200 hover:border-indigo-300 hover:text-indigo-600'
+                    ? 'bg-rose-600 text-white shadow-xs'
+                    : 'bg-white text-slate-600 border border-slate-200 hover:border-rose-300 hover:text-rose-600'
                 }`}
               >
                 {chip.label}
@@ -182,24 +182,24 @@ const SearchProfilesPage = () => {
                     <img
                       src={p.profilePhoto}
                       alt={p.name}
-                      className="w-14 h-14 rounded-2xl object-cover ring-2 ring-indigo-500/10 shadow-xs group-hover:scale-105 transition"
+                      className="w-14 h-14 rounded-2xl object-cover ring-2 ring-rose-500/10 shadow-xs group-hover:scale-105 transition"
                     />
                   ) : (
-                    <div className="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-700 flex items-center justify-center font-bold text-xl border border-indigo-100 shrink-0">
+                    <div className="w-14 h-14 rounded-2xl bg-rose-50 text-rose-700 flex items-center justify-center font-bold text-xl border border-rose-100 shrink-0">
                       {p.name.charAt(0)}
                     </div>
                   )}
 
                   <div className="overflow-hidden">
                     <div className="flex items-center gap-1.5">
-                      <h3 className="font-bold text-base text-slate-900 truncate leading-snug group-hover:text-indigo-600 transition">
+                      <h3 className="font-bold text-base text-slate-900 truncate leading-snug group-hover:text-rose-600 transition">
                         {p.name}
                       </h3>
                       {p.verifiedSkillsCount > 0 && (
                         <ShieldCheck className="w-4 h-4 text-emerald-500 shrink-0" />
                       )}
                     </div>
-                    <p className="text-xs font-mono text-indigo-600 font-semibold">@{p.username}</p>
+                    <p className="text-xs font-mono text-rose-600 font-semibold">@{p.username}</p>
                     {p.location && (
                       <p className="text-[11px] text-slate-400 flex items-center gap-1 mt-0.5">
                         <MapPin className="w-3 h-3 text-slate-400" />
@@ -283,7 +283,7 @@ const SearchProfilesPage = () => {
               <div className="pt-4 border-t border-slate-100">
                 <Link
                   to={`/profile/${p.username}`}
-                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 hover:bg-indigo-600 text-white text-xs font-bold transition shadow-xs"
+                  className="w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl bg-slate-900 hover:bg-rose-600 text-white text-xs font-bold transition shadow-xs"
                 >
                   <ExternalLink className="w-3.5 h-3.5" />
                   <span>View Verified Profile</span>

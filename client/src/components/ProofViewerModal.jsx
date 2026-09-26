@@ -32,7 +32,7 @@ const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks 
         {/* Modal Header */}
         <div className="px-6 py-4 border-b border-slate-100 flex items-center justify-between bg-slate-50/50">
           <div className="flex items-center gap-2">
-            <span className="p-1.5 bg-indigo-50 text-indigo-600 rounded-lg">
+            <span className="p-1.5 bg-rose-50 text-rose-600 rounded-lg">
               <ShieldCheck className="w-5 h-5" />
             </span>
             <div>
@@ -71,14 +71,14 @@ const ProofViewerModal = ({ isOpen, onClose, proofUrl, title, itemType, remarks 
               />
             ) : (
               <div className="text-center py-10">
-                <FileText className="w-16 h-16 text-indigo-400 mx-auto mb-3" />
+                <FileText className="w-16 h-16 text-rose-400 mx-auto mb-3" />
                 <p className="text-slate-700 font-medium mb-1">Document attached</p>
                 <p className="text-xs text-slate-500 mb-4">{resolvedUrl}</p>
                 <a
                   href={resolvedUrl}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-indigo-600 text-white rounded-lg text-sm font-medium hover:bg-indigo-700 transition"
+                  className="inline-flex items-center gap-1.5 px-4 py-2 bg-rose-600 text-white rounded-lg text-sm font-medium hover:bg-rose-700 transition"
                 >
                   <ExternalLink className="w-4 h-4" /> Open in New Tab
                 </a>

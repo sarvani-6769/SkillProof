@@ -215,7 +215,7 @@ const ProjectsPage = () => {
         <button
           type="button"
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-xs shadow-md shadow-rose-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           <span>Add Project</span>
@@ -230,7 +230,7 @@ const ProjectsPage = () => {
             onClick={() => setStatusFilter(status)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
               statusFilter === status
-                ? 'bg-indigo-600 text-white shadow-xs'
+                ? 'bg-rose-600 text-white shadow-xs'
                 : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'
             }`}
           >
@@ -289,7 +289,7 @@ const ProjectsPage = () => {
                 onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
                 placeholder="e.g. SkillProof – Credential Verification Network"
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -303,7 +303,7 @@ const ProjectsPage = () => {
                 onChange={(e) => setFormData((prev) => ({ ...prev, description: e.target.value }))}
                 placeholder="Key architecture, problems solved, and highlights..."
                 required
-                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               ></textarea>
             </div>
 
@@ -318,7 +318,7 @@ const ProjectsPage = () => {
                   setFormData((prev) => ({ ...prev, technologies: e.target.value }))
                 }
                 placeholder="e.g. React, Node.js, Express, MongoDB, Tailwind CSS, Docker"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -333,7 +333,7 @@ const ProjectsPage = () => {
                   setFormData((prev) => ({ ...prev, projectRole: e.target.value }))
                 }
                 placeholder="e.g. Full-Stack Lead, Backend Developer"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -348,7 +348,7 @@ const ProjectsPage = () => {
                   setFormData((prev) => ({ ...prev, projectDuration: e.target.value }))
                 }
                 placeholder="e.g. 3 months, Spring 2025"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -363,7 +363,7 @@ const ProjectsPage = () => {
                   setFormData((prev) => ({ ...prev, githubUrl: e.target.value }))
                 }
                 placeholder="https://github.com/..."
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -376,7 +376,7 @@ const ProjectsPage = () => {
                 value={formData.liveUrl}
                 onChange={(e) => setFormData((prev) => ({ ...prev, liveUrl: e.target.value }))}
                 placeholder="https://my-app.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -388,7 +388,7 @@ const ProjectsPage = () => {
                 type="file"
                 accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
                 onChange={(e) => setProofFile(e.target.files[0])}
-                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
               />
             </div>
 
@@ -401,7 +401,7 @@ const ProjectsPage = () => {
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, autoSubmit: e.target.checked }))
                     }
-                    className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                    className="w-4 h-4 rounded text-rose-600 focus:ring-rose-500"
                   />
                   <span className="text-xs font-medium text-slate-700">
                     Immediately submit this project for official verification
@@ -422,7 +422,7 @@ const ProjectsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Saving...' : editingProject ? 'Save Changes' : 'Create Project'}
             </button>
@@ -450,7 +450,7 @@ const ProjectsPage = () => {
               type="file"
               accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
               onChange={(e) => setVerificationProofFile(e.target.files[0])}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
             />
           </div>
 
@@ -465,7 +465,7 @@ const ProjectsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Submitting...' : 'Submit to Verifier'}
             </button>

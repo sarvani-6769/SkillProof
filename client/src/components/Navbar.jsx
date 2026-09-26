@@ -35,15 +35,15 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand Logo */}
         <Link to="/" className="flex items-center gap-2.5 group">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-sky-400 text-white flex items-center justify-center shadow-md shadow-indigo-500/20 group-hover:scale-105 transition-transform">
+          <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-rose-600 via-rose-500 to-amber-400 text-white flex items-center justify-center shadow-md shadow-rose-500/20 group-hover:scale-105 transition-transform">
             <Shield className="w-5 h-5" />
           </div>
           <div>
             <div className="flex items-center gap-1.5">
-              <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-indigo-600 transition">
-                Skill<span className="text-indigo-600">Proof</span>
+              <span className="font-extrabold text-xl tracking-tight text-slate-900 group-hover:text-rose-600 transition">
+                Skill<span className="text-rose-600">Proof</span>
               </span>
-              <span className="text-[10px] font-bold uppercase tracking-wider bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded border border-indigo-200/60">
+              <span className="text-[10px] font-bold uppercase tracking-wider bg-rose-50 text-rose-700 px-1.5 py-0.5 rounded border border-rose-200/60">
                 Verified
               </span>
             </div>
@@ -56,7 +56,7 @@ const Navbar = () => {
             to="/search"
             className={`flex items-center gap-1.5 px-3 py-2 rounded-xl transition ${
               isActive('/search')
-                ? 'text-indigo-600 bg-indigo-50/80'
+                ? 'text-rose-600 bg-rose-50/80'
                 : 'hover:text-slate-900 hover:bg-slate-100/70'
             }`}
           >
@@ -72,7 +72,7 @@ const Navbar = () => {
                     to="/dashboard"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/dashboard')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -82,7 +82,7 @@ const Navbar = () => {
                     to="/certificates"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/certificates')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -92,7 +92,7 @@ const Navbar = () => {
                     to="/projects"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/projects')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -102,7 +102,7 @@ const Navbar = () => {
                     to="/verification-requests"
                     className={`flex items-center gap-1 px-3 py-2 rounded-xl transition ${
                       isActive('/verification-requests')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -118,7 +118,7 @@ const Navbar = () => {
                     to="/admin"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/admin')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -128,7 +128,7 @@ const Navbar = () => {
                     to="/admin/requests"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/admin/requests')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -138,7 +138,7 @@ const Navbar = () => {
                     to="/admin/students"
                     className={`px-3 py-2 rounded-xl transition ${
                       isActive('/admin/students')
-                        ? 'text-indigo-600 bg-indigo-50/80'
+                        ? 'text-rose-600 bg-rose-50/80'
                         : 'hover:text-slate-900 hover:bg-slate-100/70'
                     }`}
                   >
@@ -176,7 +176,7 @@ const Navbar = () => {
               >
                 <div className="text-left hidden sm:block">
                   <p className="text-xs font-bold text-slate-800 leading-none">{user?.name}</p>
-                  <p className="text-[10px] font-semibold text-indigo-600 uppercase mt-0.5">
+                  <p className="text-[10px] font-semibold text-rose-600 uppercase mt-0.5">
                     {user?.role}
                   </p>
                 </div>
@@ -184,10 +184,10 @@ const Navbar = () => {
                   <img
                     src={user.profilePhoto}
                     alt={user.name}
-                    className="w-8 h-8 rounded-full object-cover ring-2 ring-indigo-500/20"
+                    className="w-8 h-8 rounded-full object-cover ring-2 ring-rose-500/20"
                   />
                 ) : (
-                  <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold text-xs">
+                  <div className="w-8 h-8 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold text-xs">
                     {user?.name?.charAt(0) || 'U'}
                   </div>
                 )}
@@ -200,7 +200,7 @@ const Navbar = () => {
                   <div className="px-4 py-2.5 border-b border-slate-100">
                     <p className="text-xs font-semibold text-slate-400">Signed in as</p>
                     <p className="text-sm font-bold text-slate-800 truncate">{user?.email}</p>
-                    <span className="inline-block mt-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-200">
+                    <span className="inline-block mt-1 text-[10px] font-semibold px-2 py-0.5 rounded-full bg-rose-50 text-rose-700 border border-rose-200">
                       {user?.role === 'verifier' ? 'Official Verifier' : 'Student'}
                     </span>
                   </div>
@@ -218,7 +218,7 @@ const Navbar = () => {
                       <Link
                         to={`/profile/${user.username}`}
                         onClick={() => setUserDropdownOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-xs font-medium text-indigo-600 hover:bg-indigo-50/50 transition"
+                        className="flex items-center gap-2 px-4 py-2 text-xs font-medium text-rose-600 hover:bg-rose-50/50 transition"
                       >
                         <ExternalLink className="w-4 h-4" />
                         Public Profile
@@ -260,7 +260,7 @@ const Navbar = () => {
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 text-sm font-semibold text-white bg-indigo-600 hover:bg-indigo-700 rounded-xl shadow-sm shadow-indigo-500/20 transition-all hover:scale-[1.02]"
+                className="px-4 py-2 text-sm font-semibold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-sm shadow-rose-500/20 transition-all hover:scale-[1.02]"
               >
                 Get Verified
               </Link>
@@ -353,7 +353,7 @@ const Navbar = () => {
                   <Link
                     to={`/profile/${user.username}`}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="block px-3 py-2 rounded-xl text-sm font-semibold text-indigo-600 hover:bg-indigo-50"
+                    className="block px-3 py-2 rounded-xl text-sm font-semibold text-rose-600 hover:bg-rose-50"
                   >
                     Public Profile
                   </Link>
@@ -406,7 +406,7 @@ const Navbar = () => {
               <Link
                 to="/register"
                 onClick={() => setMobileMenuOpen(false)}
-                className="block text-center py-2 text-sm font-semibold text-white bg-indigo-600 rounded-xl"
+                className="block text-center py-2 text-sm font-semibold text-white bg-rose-600 rounded-xl"
               >
                 Get Verified
               </Link>

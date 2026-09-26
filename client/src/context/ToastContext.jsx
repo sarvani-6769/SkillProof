@@ -37,7 +37,7 @@ export const ToastProvider = ({ children }) => {
       case 'warning':
         return <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0" />;
       default:
-        return <Info className="w-5 h-5 text-indigo-500 shrink-0" />;
+        return <Info className="w-5 h-5 text-rose-500 shrink-0" />;
     }
   };
 
@@ -50,7 +50,7 @@ export const ToastProvider = ({ children }) => {
       case 'warning':
         return 'border-amber-500/20 bg-amber-50/90 text-amber-950 dark:bg-amber-950/60 dark:text-amber-100';
       default:
-        return 'border-indigo-500/20 bg-indigo-50/90 text-indigo-950 dark:bg-indigo-950/60 dark:text-indigo-100';
+        return 'border-rose-500/20 bg-rose-50/90 text-rose-950 dark:bg-rose-950/60 dark:text-rose-100';
     }
   };
 

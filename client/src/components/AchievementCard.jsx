@@ -25,7 +25,7 @@ const AchievementCard = ({
       case 'Awards':
         return 'bg-rose-50 text-rose-700 border-rose-200';
       case 'Publications':
-        return 'bg-blue-50 text-blue-700 border-blue-200';
+        return 'bg-rose-50 text-rose-700 border-rose-200';
       case 'Workshops':
         return 'bg-teal-50 text-teal-700 border-teal-200';
       default:

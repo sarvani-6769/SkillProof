@@ -221,7 +221,7 @@ const InternshipsPage = () => {
         <button
           type="button"
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-xs shadow-md shadow-rose-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           <span>Add Internship</span>
@@ -236,7 +236,7 @@ const InternshipsPage = () => {
             onClick={() => setStatusFilter(status)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
               statusFilter === status
-                ? 'bg-indigo-600 text-white shadow-xs'
+                ? 'bg-rose-600 text-white shadow-xs'
                 : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'
             }`}
           >
@@ -295,7 +295,7 @@ const InternshipsPage = () => {
                 onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
                 placeholder="e.g. Stripe, Datadog, Microsoft"
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -309,7 +309,7 @@ const InternshipsPage = () => {
                 onChange={(e) => setFormData((prev) => ({ ...prev, role: e.target.value }))}
                 placeholder="e.g. Software Engineering Intern"
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -322,7 +322,7 @@ const InternshipsPage = () => {
                 value={formData.startDate}
                 onChange={(e) => setFormData((prev) => ({ ...prev, startDate: e.target.value }))}
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -333,7 +333,7 @@ const InternshipsPage = () => {
                 value={formData.endDate}
                 onChange={(e) => setFormData((prev) => ({ ...prev, endDate: e.target.value }))}
                 disabled={formData.currentlyWorking}
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none disabled:bg-slate-50 disabled:text-slate-400"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none disabled:bg-slate-50 disabled:text-slate-400"
               />
             </div>
 
@@ -345,7 +345,7 @@ const InternshipsPage = () => {
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, currentlyWorking: e.target.checked }))
                   }
-                  className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                  className="w-4 h-4 rounded text-rose-600 focus:ring-rose-500"
                 />
                 <span className="text-xs font-medium text-slate-700">
                   I am currently working in this role
@@ -364,7 +364,7 @@ const InternshipsPage = () => {
                   setFormData((prev) => ({ ...prev, description: e.target.value }))
                 }
                 placeholder="Systems worked on, quantifiable impact, and learnings..."
-                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               ></textarea>
             </div>
 
@@ -379,7 +379,7 @@ const InternshipsPage = () => {
                   setFormData((prev) => ({ ...prev, technologies: e.target.value }))
                 }
                 placeholder="e.g. Go, Docker, AWS, Kubernetes, Redis"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -394,7 +394,7 @@ const InternshipsPage = () => {
                   setFormData((prev) => ({ ...prev, companyUrl: e.target.value }))
                 }
                 placeholder="https://company.com"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -406,7 +406,7 @@ const InternshipsPage = () => {
                 type="file"
                 accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
                 onChange={(e) => setProofFile(e.target.files[0])}
-                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
               />
             </div>
 
@@ -419,7 +419,7 @@ const InternshipsPage = () => {
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, autoSubmit: e.target.checked }))
                     }
-                    className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                    className="w-4 h-4 rounded text-rose-600 focus:ring-rose-500"
                   />
                   <span className="text-xs font-medium text-slate-700">
                     Immediately submit this internship for official verification
@@ -440,7 +440,7 @@ const InternshipsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Saving...' : editingInternship ? 'Save Changes' : 'Create Internship'}
             </button>
@@ -468,7 +468,7 @@ const InternshipsPage = () => {
               type="file"
               accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
               onChange={(e) => setVerificationProofFile(e.target.files[0])}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
             />
           </div>
 
@@ -483,7 +483,7 @@ const InternshipsPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Submitting...' : 'Submit to Verifier'}
             </button>

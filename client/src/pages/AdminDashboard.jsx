@@ -107,11 +107,11 @@ const AdminDashboard = () => {
   return (
     <div className="space-y-8">
       {/* Top Banner */}
-      <div className="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
+      <div className="bg-gradient-to-r from-slate-900 via-rose-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 shadow-xl relative overflow-hidden">
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div>
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/20 text-indigo-300 text-xs font-semibold mb-3 border border-indigo-400/20">
-              <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-rose-500/20 text-rose-300 text-xs font-semibold mb-3 border border-rose-400/20">
+              <ShieldCheck className="w-3.5 h-3.5 text-rose-400" />
               <span>Official Verification Authority</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-extrabold tracking-tight">
@@ -125,7 +125,7 @@ const AdminDashboard = () => {
           <div className="flex items-center gap-3">
             <Link
               to="/admin/requests"
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold transition shadow-md shadow-indigo-900/30"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white text-xs font-bold transition shadow-md shadow-rose-900/30"
             >
               <Clock className="w-4 h-4" />
               <span>Open Review Queue</span>
@@ -141,14 +141,14 @@ const AdminDashboard = () => {
           value={stats?.totalStudents || 0}
           subtext="Registered students"
           icon={Users}
-          color="indigo"
+          color="rose"
         />
         <StatCard
           title="Submissions"
           value={stats?.totalSubmissions || 0}
           subtext="Lifetime requests"
           icon={FileCheck}
-          color="blue"
+          color="amber"
         />
         <StatCard
           title="Pending Action"
@@ -184,7 +184,7 @@ const AdminDashboard = () => {
           </div>
           <Link
             to="/admin/requests"
-            className="text-xs font-semibold text-indigo-600 hover:underline flex items-center gap-1"
+            className="text-xs font-semibold text-rose-600 hover:underline flex items-center gap-1"
           >
             <span>View all in queue</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -217,7 +217,7 @@ const AdminDashboard = () => {
                             className="w-7 h-7 rounded-full object-cover"
                           />
                         ) : (
-                          <div className="w-7 h-7 rounded-full bg-indigo-100 text-indigo-700 flex items-center justify-center font-bold">
+                          <div className="w-7 h-7 rounded-full bg-rose-100 text-rose-700 flex items-center justify-center font-bold">
                             {req.userId?.name?.charAt(0) || 'S'}
                           </div>
                         )}
@@ -251,7 +251,7 @@ const AdminDashboard = () => {
                               remarks: req.remarks,
                             })
                           }
-                          className="inline-flex items-center gap-1 text-indigo-600 font-semibold hover:underline"
+                          className="inline-flex items-center gap-1 text-rose-600 font-semibold hover:underline"
                         >
                           <FileText className="w-3.5 h-3.5" /> View
                         </button>
@@ -321,7 +321,7 @@ const AdminDashboard = () => {
                   href={selectedReq.proof}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-indigo-600 underline"
+                  className="text-rose-600 underline"
                 >
                   Open in New Window
                 </a>
@@ -343,7 +343,7 @@ const AdminDashboard = () => {
                   : 'Please state why the submission could not be verified (e.g. illegible document, expired link)...'
               }
               required={actionType === 'reject'}
-              className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+              className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
             ></textarea>
           </div>
 

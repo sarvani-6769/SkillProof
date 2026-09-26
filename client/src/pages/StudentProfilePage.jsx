@@ -168,7 +168,7 @@ const StudentProfilePage = () => {
             href={`/profile/${formData.username}`}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-xs font-bold transition border border-indigo-200/60 shadow-xs"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-bold transition border border-rose-200/60 shadow-xs"
           >
             <ExternalLink className="w-4 h-4" />
             <span>View Public Profile</span>
@@ -180,14 +180,14 @@ const StudentProfilePage = () => {
       <div className="bg-white rounded-2xl p-6 border border-slate-200/80 shadow-xs">
         <div className="flex items-center justify-between mb-2">
           <div className="flex items-center gap-2">
-            <ShieldCheck className="w-5 h-5 text-indigo-600" />
+            <ShieldCheck className="w-5 h-5 text-rose-600" />
             <h4 className="text-sm font-bold text-slate-900">Profile Completeness</h4>
           </div>
-          <span className="text-sm font-black text-indigo-600">{completionPercentage}%</span>
+          <span className="text-sm font-black text-rose-600">{completionPercentage}%</span>
         </div>
         <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
           <div
-            className="h-full bg-gradient-to-r from-indigo-500 to-emerald-500 rounded-full transition-all duration-500"
+            className="h-full bg-gradient-to-r from-rose-500 to-emerald-500 rounded-full transition-all duration-500"
             style={{ width: `${completionPercentage}%` }}
           ></div>
         </div>
@@ -209,10 +209,10 @@ const StudentProfilePage = () => {
                 <img
                   src={photoPreview}
                   alt="Profile Preview"
-                  className="w-20 h-20 rounded-2xl object-cover ring-2 ring-indigo-500/20 shadow-md"
+                  className="w-20 h-20 rounded-2xl object-cover ring-2 ring-rose-500/20 shadow-md"
                 />
               ) : (
-                <div className="w-20 h-20 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-2xl border border-indigo-200/60 shadow-xs">
+                <div className="w-20 h-20 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center font-bold text-2xl border border-rose-200/60 shadow-xs">
                   {formData.name?.charAt(0) || 'U'}
                 </div>
               )}
@@ -255,7 +255,7 @@ const StudentProfilePage = () => {
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -269,7 +269,7 @@ const StudentProfilePage = () => {
                 value={formData.username}
                 onChange={handleChange}
                 required
-                className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+                className="w-full pl-8 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
               />
             </div>
           </div>
@@ -293,7 +293,7 @@ const StudentProfilePage = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder="+1 (555) 000-0000"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -305,7 +305,7 @@ const StudentProfilePage = () => {
               value={formData.location}
               onChange={handleChange}
               placeholder="e.g. San Francisco, CA"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -320,7 +320,7 @@ const StudentProfilePage = () => {
               onChange={handleChange}
               maxLength={500}
               placeholder="Tell recruiters about your engineering passion and career objectives..."
-              className="w-full p-4 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full p-4 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             ></textarea>
             <p className="text-[11px] text-slate-400 text-right mt-1">
               {formData.bio.length} / 500 characters
@@ -343,7 +343,7 @@ const StudentProfilePage = () => {
               value={formData.college}
               onChange={handleChange}
               placeholder="e.g. Stanford University"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -355,7 +355,7 @@ const StudentProfilePage = () => {
               value={formData.degree}
               onChange={handleChange}
               placeholder="e.g. Bachelor of Science"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -367,7 +367,7 @@ const StudentProfilePage = () => {
               value={formData.branch}
               onChange={handleChange}
               placeholder="e.g. Computer Science"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
 
@@ -379,7 +379,7 @@ const StudentProfilePage = () => {
               value={formData.graduationYear}
               onChange={handleChange}
               placeholder="e.g. 2026"
-              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+              className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
             />
           </div>
         </div>
@@ -401,7 +401,7 @@ const StudentProfilePage = () => {
                 value={formData.linkedin}
                 onChange={handleChange}
                 placeholder="https://linkedin.com/in/..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
               />
             </div>
           </div>
@@ -416,7 +416,7 @@ const StudentProfilePage = () => {
                 value={formData.github}
                 onChange={handleChange}
                 placeholder="https://github.com/..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
               />
             </div>
           </div>
@@ -431,7 +431,7 @@ const StudentProfilePage = () => {
                 value={formData.portfolio}
                 onChange={handleChange}
                 placeholder="https://..."
-                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none transition"
+                className="w-full pl-10 pr-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none transition"
               />
             </div>
           </div>
@@ -442,7 +442,7 @@ const StudentProfilePage = () => {
           <button
             type="submit"
             disabled={loading}
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-md shadow-indigo-500/20 transition-all hover:scale-[1.02]"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-sm shadow-md shadow-rose-500/20 transition-all hover:scale-[1.02]"
           >
             {loading ? (
               <span>Saving Changes...</span>

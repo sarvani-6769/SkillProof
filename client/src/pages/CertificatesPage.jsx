@@ -211,7 +211,7 @@ const CertificatesPage = () => {
         <button
           type="button"
           onClick={handleOpenAdd}
-          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-xs shadow-md shadow-indigo-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-rose-600 hover:bg-rose-700 text-white font-semibold text-xs shadow-md shadow-rose-500/20 transition-all hover:scale-[1.02] self-start sm:self-auto"
         >
           <Plus className="w-4 h-4" />
           <span>Add Certificate</span>
@@ -226,7 +226,7 @@ const CertificatesPage = () => {
             onClick={() => setStatusFilter(status)}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition ${
               statusFilter === status
-                ? 'bg-indigo-600 text-white shadow-xs'
+                ? 'bg-rose-600 text-white shadow-xs'
                 : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80'
             }`}
           >
@@ -285,7 +285,7 @@ const CertificatesPage = () => {
                 onChange={(e) => setFormData((prev) => ({ ...prev, title: e.target.value }))}
                 placeholder="e.g. AWS Solutions Architect Associate, Google Cloud Engineer"
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -301,7 +301,7 @@ const CertificatesPage = () => {
                 }
                 placeholder="e.g. Amazon Web Services, Coursera, Meta"
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -314,7 +314,7 @@ const CertificatesPage = () => {
                 value={formData.issueDate}
                 onChange={(e) => setFormData((prev) => ({ ...prev, issueDate: e.target.value }))}
                 required
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -329,7 +329,7 @@ const CertificatesPage = () => {
                   setFormData((prev) => ({ ...prev, credentialId: e.target.value }))
                 }
                 placeholder="e.g. AWS-99482-ARCH"
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none font-mono"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none font-mono"
               />
             </div>
 
@@ -344,7 +344,7 @@ const CertificatesPage = () => {
                   setFormData((prev) => ({ ...prev, credentialUrl: e.target.value }))
                 }
                 placeholder="https://credly.com/..."
-                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full px-4 py-2.5 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               />
             </div>
 
@@ -359,7 +359,7 @@ const CertificatesPage = () => {
                   setFormData((prev) => ({ ...prev, description: e.target.value }))
                 }
                 placeholder="Briefly describe what this certificate represents..."
-                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-600 outline-none"
+                className="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500/20 focus:border-rose-600 outline-none"
               ></textarea>
             </div>
 
@@ -371,7 +371,7 @@ const CertificatesPage = () => {
                 type="file"
                 accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
                 onChange={(e) => setProofFile(e.target.files[0])}
-                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+                className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
               />
             </div>
 
@@ -384,7 +384,7 @@ const CertificatesPage = () => {
                     onChange={(e) =>
                       setFormData((prev) => ({ ...prev, autoSubmit: e.target.checked }))
                     }
-                    className="w-4 h-4 rounded text-indigo-600 focus:ring-indigo-500"
+                    className="w-4 h-4 rounded text-rose-600 focus:ring-rose-500"
                   />
                   <span className="text-xs font-medium text-slate-700">
                     Immediately submit this certificate for official verification
@@ -405,7 +405,7 @@ const CertificatesPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Saving...' : editingCert ? 'Save Changes' : 'Create Certificate'}
             </button>
@@ -433,7 +433,7 @@ const CertificatesPage = () => {
               type="file"
               accept=".pdf,.png,.jpg,.jpeg,.svg,.webp"
               onChange={(e) => setVerificationProofFile(e.target.files[0])}
-              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-indigo-50 file:text-indigo-700 hover:file:bg-indigo-100"
+              className="w-full text-xs text-slate-500 file:mr-4 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-rose-50 file:text-rose-700 hover:file:bg-rose-100"
             />
           </div>
 
@@ -448,7 +448,7 @@ const CertificatesPage = () => {
             <button
               type="submit"
               disabled={submitting}
-              className="px-5 py-2 rounded-xl bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs"
+              className="px-5 py-2 rounded-xl bg-rose-600 hover:bg-rose-700 text-white text-xs font-semibold shadow-xs"
             >
               {submitting ? 'Submitting...' : 'Submit to Verifier'}
             </button>

@@ -1,9 +1,15 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet, Link, useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import { Shield, Heart } from 'lucide-react';
 
 const PublicLayout = () => {
+  const location = useLocation();
+
+  if (location.pathname === '/') {
+    return <Outlet />;
+  }
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-50">
       <Navbar />
@@ -16,7 +22,7 @@ const PublicLayout = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
             <div className="md:col-span-1">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center font-bold">
+                <div className="w-8 h-8 rounded-lg bg-rose-600 text-white flex items-center justify-center font-bold">
                   <Shield className="w-4 h-4" />
                 </div>
                 <span className="font-extrabold text-lg text-slate-900">SkillProof</span>
@@ -31,9 +37,9 @@ const PublicLayout = () => {
                 For Students
               </h5>
               <ul className="space-y-2 text-xs text-slate-600">
-                <li><Link to="/register" className="hover:text-indigo-600">Create Profile</Link></li>
-                <li><Link to="/search" className="hover:text-indigo-600">Explore Directory</Link></li>
-                <li><Link to="/login" className="hover:text-indigo-600">Submit Verification</Link></li>
+                <li><Link to="/register" className="hover:text-rose-600">Create Profile</Link></li>
+                <li><Link to="/search" className="hover:text-rose-600">Explore Directory</Link></li>
+                <li><Link to="/login" className="hover:text-rose-600">Submit Verification</Link></li>
               </ul>
             </div>
 
@@ -42,9 +48,9 @@ const PublicLayout = () => {
                 For Verifiers & Recruiters
               </h5>
               <ul className="space-y-2 text-xs text-slate-600">
-                <li><Link to="/login" className="hover:text-indigo-600">Verifier Portal</Link></li>
-                <li><Link to="/search" className="hover:text-indigo-600">Search Talent</Link></li>
-                <li><a href="#how-it-works" className="hover:text-indigo-600">Verification Protocol</a></li>
+                <li><Link to="/login" className="hover:text-rose-600">Verifier Portal</Link></li>
+                <li><Link to="/search" className="hover:text-rose-600">Search Talent</Link></li>
+                <li><a href="#how-it-works" className="hover:text-rose-600">Verification Protocol</a></li>
               </ul>
             </div>
 
